@@ -15,7 +15,7 @@ public class KegiatanPageSteps {
 
     @And("[user] verify that the list of videos on Kegiatan Page of the Akulaku website is should be {int} items")
     public void userVerifyThatTheListOfVideosOnKegiatanPageOfTheAkulakuWebsiteIsShouldBeItems(int expectedCount) {
-        List<WebElement> listofVideos = kegiatanPages.listOfVideos(expectedCount);
+        List<WebElement> listofVideos = kegiatanPages.listOfVideos();
         Integer countOfVideos = listofVideos.size();
         System.out.println("Actual count of videos: "+ countOfVideos);
         assertThat("wrong assertion for count of videos", countOfVideos, equalTo(expectedCount));
@@ -33,7 +33,7 @@ public class KegiatanPageSteps {
 
     @And("[user] verifies that the list of search suggestions in the search bar on Kegiatan Page of the Akulaku website is should be {int} items")
     public void userVerifiesThatTheListOfSearchSuggestionsInTheSearchBarOnKegiatanPageOfTheAkulakuWebsiteIsShouldBeItems(int expectedCount) {
-        List<WebElement> listofResult = kegiatanPages.listOfResultSearch(expectedCount);
+        List<WebElement> listofResult = kegiatanPages.listOfResultSearch();
         Integer countOfResult = listofResult.size();
         System.out.println("Actual count of suggestions: "+ countOfResult);
         assertThat("wrong assertion for count of videos", countOfResult, equalTo(expectedCount));

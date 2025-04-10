@@ -7,9 +7,9 @@ import org.example.utils.Waitility;
 import java.util.List;
 
 public class KegiatanPages {
-    public List<WebElement> listOfVideos(Integer MIN_COUNT_VIDEOS) {
+    public List<WebElement> listOfVideos() {
         String listVideos = "//div[@class='flex justify-center']//a[@href]";
-        Waitility.waitForElements(By.xpath(listVideos), MIN_COUNT_VIDEOS);
+        Waitility.waitForElements(By.xpath(listVideos));
         return DriverFactory.getDriver().findElements(By.xpath(listVideos));
     }
 
@@ -28,9 +28,9 @@ public class KegiatanPages {
         searchBarElement.sendKeys(query);
     }
 
-    public List<WebElement> listOfResultSearch(Integer MIN_COUNT_VIDEOS) {
+    public List<WebElement> listOfResultSearch() {
         String listResult = "//div[@class='m-[10px]']//div[contains(@class, 'justify-between') and contains(@class, 'cursor-pointer')]";
-        Waitility.waitForElements(By.xpath(listResult), MIN_COUNT_VIDEOS);
+        Waitility.waitForElements(By.xpath(listResult));
         return DriverFactory.getDriver().findElements(By.xpath(listResult));
     }
 }
